@@ -26,7 +26,6 @@ class Guess
 
   def feedback
     answer = ""
-    # correctness = correct?
     if correct? == true
       p answer = "Correct!"
     else
