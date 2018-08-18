@@ -1,5 +1,4 @@
 # Create a class for the Guess functionality
-
 require 'pry'
 
 require './lib/card'
@@ -35,10 +34,4 @@ class Guess
     end
     return answer
   end
-
-
 end
-
-# card = Card.new("10", "Hearts")
-# guess = Guess.new("10 of Hearts", card)
-# binding.pry
