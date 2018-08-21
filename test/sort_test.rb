@@ -3,77 +3,53 @@ require 'pry'
 require 'minitest/autorun'
 require 'minitest/pride'
 
-require './lib/card.rb'
-require './lib/guess.rb'
-require './lib/deck.rb'
-require './lib/round.rb'
+require './lib/card'
+require './lib/deck'
+require './lib/round'
+require './lib/sort'
 
-# TO DO - Write test for DECK.sort in deck_test
+# card_1 = Card.new("4","Hearts")
+# card_2 = Card.new("Jack", "Clubs")
+# card_3 = Card.new("5", "Diamonds")
+# card_4 = Card.new("Ace", "Spades")
+# card_5 = Card.new("Ace", "Diamonds")
+# deck = Deck.new([card_1, card_2, card_3, card_4, card_5])
+# round = Round.new(deck)
+
 
 class SortTest < Minitest::Test
+
   def test_it_exists
-    card_1 = Card.new("3", "Hearts")
-    card_2 = Card.new("3", "Clubs")
-    card_3 = Card.new("Ace", "Spades")
+    card_1 = Card.new("4","Hearts")
+    card_2 = Card.new("Jack", "Clubs")
+    card_3 = Card.new("5", "Diamonds")
     deck = Deck.new([card_1, card_2, card_3])
-    sort = Sort.new(deck)
-    assert_instance_of Sort, sort
+    assert_instance_of Sort, Sort.new(deck)
   end
 
-  def test_it_can_get_sort_attributes
-    card_1 = Card.new("3", "Hearts")
-    card_2 = Card.new("3", "Clubs")
-    card_3 = Card.new("Ace", "Spades")
-    deck = Deck.new([card_1, card_2, card_3])
+  def test_it_gets_attributes
+    card_1 = Card.new("4","Hearts")
+    deck = Deck.new([card_1])
     sort = Sort.new(deck)
-
-    val_order = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"]
-    s_order = ["Clubs", "Diamonds", "Hearts", "Spades"]
-
+    val_order = [2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King", "Ace"]
+    suit_order = ["Clubs", "Diamonds", "Hearts", "Spades"]
     assert_equal deck, sort.deck
     assert_equal val_order, sort.value_order
-    assert_equal s_order, sort.suit_order
+    assert_equal suit_order, sort.suit_order
   end
 
-  # ----------------------------------------------------------------
-  # CANNOT GET THIS TEST TO WORK
-  # but I know the program sorts the cards
-  # and this is a vital step.
-  # ----------------------------------------------------------------
-  def test_it_can_create_rank_for_each_card_as_an_integer_value
-    skip
-    card_1 = Card.new("3", "Hearts")
-    card_2 = Card.new("3", "Clubs")
-    card_3 = Card.new("Ace", "Spades")
-    deck = Deck.new([card_1, card_2, card_3])
-    sort = Sort.new(deck)
-    # ALREADY SORTED # ints = deck.sort.create_ranked_array
-    # Returns array of value-suit pairs # ints = sort.create_ranked_array
-    binding.pry
-    # assert_equal [12, 10, 123], sort.create_ranked_array
+  # ########################################
+
+  def test_it_sorts_the_deck
+    # Must return array of Instances
   end
 
-  def test_it_can_create_a_rank_for_each_card
-    card_1 = Card.new("3", "Hearts")
-    card_2 = Card.new("3", "Clubs")
-    card_3 = Card.new("Ace", "Spades")
-    deck = Deck.new([card_1, card_2, card_3])
-    sort = Sort.new(deck)
-    assert_equal 12, sort.card_rank(deck.cards[0])
+  # ########################################
+
+  def
+
   end
 
-  def test_it_can_sort_card_ranks
-    card_1 = Card.new("3", "Hearts")
-    card_2 = Card.new("3", "Clubs")
-    card_3 = Card.new("Ace", "Spades")
-    deck = Deck.new([card_1, card_2, card_3])
-    sort = Sort.new(deck)
-    # sort returns the Deck object
-    # sort.deck.cards returns array of cards
-    # deck.sort returns a sorted array
-    binding.pry
-    p sort.deck.cards.sort_ranks
-  end
 
 
 

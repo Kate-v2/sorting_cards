@@ -1,4 +1,5 @@
-# Create a class for sorting functionality
+# Create a class for Sort functionality
+
 
 # ------------------------------------------------------------------------------
 # Add to the deck object
@@ -13,68 +14,38 @@
 
 # ------------------------------------------------------------------------------
 
-
-require 'pry'
-
-require './lib/deck'
-
 class Sort
   attr_reader :deck, :value_order, :suit_order
 
   def initialize(deck)
     @deck = deck
-    @value_order = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"]
+    @value_order = [2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King", "Ace"]
     @suit_order = ["Clubs", "Diamonds", "Hearts", "Spades"]
   end
 
-  def create_ranked_array
-    unsorted_ranked = []
-    @deck.each do |card|
-      unsorted_ranked << card_rank(card)
-    end
-    binding.pry
-    return unsorted_ranked
+  # ########################################
+
+  def sort_deck
+    # give an integer value to each card
+    # each int will be unit
+    # index_value_order (joined) index_suit_order
+    # convert to int
+    # make unique int value a key, value = card instance
+    # keys to new array
+    # sort keys by value
+    # create sorted array []
+    # for each key, look up the value (card), shovel into sorted array
   end
 
-  def card_rank(card)
-    val = @value_order.index(card.value)
-    suit = @suit_order.index(card.suit)
-    string = [val, suit].join
-    rank = string.to_i
-    binding.pry
-    return rank
+  # ########################################
+
+  def rank_card
+
   end
 
-  def sort_ranks
-    unsorted = create_ranked_array
-    sorted = []
-    while unsorted.count > 0
-      sorted << unsorted.min
-      unsorted.delete(unsorted.min)
-    end
-    return sorted
-  end
 
-  def sort
-    ranks = sort_ranks
-    sorted_array = []
-    ranks.each do |rank|
-      sorted_array << pair_card_attributes(rank)
-    end
-    return sorted_array
-  end
-
-  def pair_card_attributes(rank)
-    val = @value_order[rank / 10]
-    suit = @suit_order[rank % 10]
-    return pair = [val, suit]
-  end
 
 end
-
-
-
-
 
 
 # Each Card
