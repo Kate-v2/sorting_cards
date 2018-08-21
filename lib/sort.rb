@@ -37,30 +37,13 @@ class Sort
   end
 
   def card_rank(card)
-    # val = index_val(card.value)
-    # suit = index_suit(card.suit)
-    val = index_int(card.value, @value_order)
-    suit = index_int(card.suit, @suit_order)
+    val = @value_order.index(card.value)
+    suit = @suit_order.index(card.suit)
     string = [val, suit].join
     rank = string.to_i
+    binding.pry
     return rank
   end
-
-  def index_int(string, array)
-    i = array.index(string)
-    return i
-  end
-
-
-  # def index_val(string)
-  #   index = @value_order.index(string)
-  #   return index
-  # end
-  #
-  # def index_suit(string)
-  #   index = @suit_order.index(string)
-  #   return index
-  # end
 
   def sort_ranks
     unsorted = create_ranked_array

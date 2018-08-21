@@ -62,27 +62,6 @@ class SortTest < Minitest::Test
     assert_equal 12, sort.card_rank(deck.cards[0])
   end
 
-  def test_it_can_index_the_card_value
-    card_1 = Card.new("3", "Hearts")
-    card_2 = Card.new("3", "Clubs")
-    card_3 = Card.new("Ace", "Spades")
-    deck = Deck.new([card_1, card_2, card_3])
-    sort = Sort.new(deck)
-    assert_equal 1, sort.index_val("3")
-  end
-
-  def test_it_can_index_the_card_suit
-    card_1 = Card.new("3", "Hearts")
-    card_2 = Card.new("3", "Clubs")
-    card_3 = Card.new("Ace", "Spades")
-    deck = Deck.new([card_1, card_2, card_3])
-    sort = Sort.new(deck)
-    assert_equal 2, sort.index_suit("Hearts")
-    # TO DO - refactor later:
-    # CAN CREATE ONE INDEX function
-    # call it twice, each time passing 1 type of array (val/suits)
-  end
-
   def test_it_can_sort_card_ranks
     card_1 = Card.new("3", "Hearts")
     card_2 = Card.new("3", "Clubs")
