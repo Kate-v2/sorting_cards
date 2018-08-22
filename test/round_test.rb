@@ -42,9 +42,6 @@ class RoundTest < Minitest::Test
     guess = round.record_guess({value: "Jack", suit: "Diamonds"})
     guess_response = guess.response
     guess_card = guess.card
-    # Instances of classes are different because
-    # the two objects have different IDs.
-    # Therefore, we compare the attributes.
     expected = Guess.new("Jack of Diamonds", deck.cards[0])
     expected_response = "Jack of Diamonds"
     expected_card = deck.cards[0]
