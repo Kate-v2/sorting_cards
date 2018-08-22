@@ -3,6 +3,7 @@ require 'pry'
 
 require './lib/card'
 require './lib/sort'
+require './lib/merge_sort'
 
 
 class Deck
@@ -23,5 +24,10 @@ class Deck
   def sort
     sorted_array = Sort.new(self).sort_deck
     return sorted_array
+  end
+
+  def merge_sort
+    sorted = MergeSort.new(self).sort
+    return sorted
   end
 end
