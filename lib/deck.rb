@@ -23,7 +23,8 @@ class Deck
   end
 
   def sort
-    sorted_array = Sort.new(@cards).sort
+    sorted_array = Sort.new(self).sort_deck
+    binding.pry
     return sorted_array
   end
 end
