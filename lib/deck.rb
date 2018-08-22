@@ -2,6 +2,7 @@
 require 'pry'
 
 require './lib/card'
+require './lib/sort'
 
 
 class Deck
@@ -21,4 +22,9 @@ class Deck
     @cards.count
   end
 
+  def sort
+    sorted_array = Sort.new(self).sort_deck
+    binding.pry
+    return sorted_array
+  end
 end
