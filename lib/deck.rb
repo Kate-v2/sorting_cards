@@ -24,7 +24,6 @@ class Deck
 
   def sort
     sorted_array = Sort.new(self).sort_deck
-    binding.pry
     return sorted_array
   end
 end
