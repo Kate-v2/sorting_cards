@@ -1,18 +1,5 @@
 # Create a class for Sort functionality
 
-# ------------------------------------------------------------------------------
-# Add to the deck object
-  # sort the cards based on their value
-    # LOW TO HIGH
-      # val_order = [2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King", "Ace"]
-      # val_order_st = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"]
-
-# two cards have the same value,
-  # lowest to highest
-    # Clubs, Diamonds, Hearts, Spades.
-
-# ------------------------------------------------------------------------------
-
 require 'pry'
 require './lib/deck'
 require './lib/card'

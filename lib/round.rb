@@ -20,13 +20,12 @@ class Round
     return @deck.cards[@deck_index]
   end
 
-  # FEEDBACK? - Is this too many responsibilities?
   def record_guess(guess = {})
-    response = guess[:value] + " of " + guess[:suit]
-    guess = Guess.new(response, current_card)
-    @guesses << guess
+    response_string = guess[:value] + " of " + guess[:suit]
+    guessed = Guess.new(response_string, current_card)
+    @guesses << guessed
     move_to_next_card
-    return guess
+    return guessed
   end
 
     def move_to_next_card
