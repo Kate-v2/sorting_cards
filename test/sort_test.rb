@@ -52,10 +52,8 @@ class SortTest < Minitest::Test
     card_2 = Card.new("Jack", "Clubs")
     deck = Deck.new([card_1, card_2])
     sort = Sort.new(deck)
-
     ranked = sort.rank_all_cards
     expected = {22 => card_1, 90 => card_2}
-
     assert_equal expected, ranked
   end
 
@@ -87,7 +85,6 @@ class SortTest < Minitest::Test
     ranked = sort.rank_all_cards
     keys = sort.sort_keys(ranked)
     sorted = sort.order_cards(keys, ranked)
-    # -----------------------------------
     expected = [card_1, card_3, card_2, card_5, card_4]
     assert_equal expected, sorted
   end

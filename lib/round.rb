@@ -13,7 +13,6 @@ class Round
     @deck = deck
     @deck_index = 0
     @guesses = []
-    # @correct = 0
   end
 
   def current_card

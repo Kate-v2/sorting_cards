@@ -42,7 +42,6 @@ class Sort
     return rank
   end
 
-  # def sort_by_key_rank(ranked)
   def sort_keys(ranked)
     sorted_keys = []
     keys = ranked.keys
