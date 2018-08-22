@@ -8,18 +8,6 @@ require './lib/deck'
 require './lib/merge_sort'
 
 
-# card_1 = Card.new("4","Hearts")
-# card_2 = Card.new("Jack", "Clubs")
-# card_3 = Card.new("5", "Diamonds")
-# card_4 = Card.new("Ace", "Spades")
-# card_5 = Card.new("Ace", "Diamonds")
-# deck = Deck.new([card_1, card_2, card_3, card_4, card_5])
-# sort = MergeSort.new(deck)
-#
-# expected = [card_1, card_3, card_2, card_5, card_4]
-
-
-
 class MergeSortTest < Minitest::Test
 
   def test_it_exists
@@ -138,6 +126,5 @@ class MergeSortTest < Minitest::Test
     expected = [1, 3, 4, 7, 8, 9]
     assert_equal expected, actual
   end
-
 
 end
